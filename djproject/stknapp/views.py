@@ -11,12 +11,6 @@ from . import stakanov # подцепили исходный скрипт, но 
 
 
 
-
-'''
-def extstats(request, num):
-    return HttpResponse("You're looking at extstats")
-    '''
-
 def extstats(request, num):
     try:
         num = int(num)  # строку в инт
