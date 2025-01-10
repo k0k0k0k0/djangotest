@@ -7,7 +7,7 @@ from django.db.models import Count
 
 from .forms import PathForm
 from .models import FileInfo  # модель данных
-from . import stakanov # подцепили исходный скрипт, но почему именно такой синтаксис?
+from . import stakanov
 
 
 

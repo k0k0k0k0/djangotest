@@ -160,7 +160,7 @@ class ImageResearcher(GeneralResearcher):
                 file_info['created_time'] = int(dt_object.timestamp())
             except Exception as e:
                 pass
-        file_info['IMG_size'] = image.size[0]*image.size[1]
+        file_info['IMG_size'] = round(image.size[0]*image.size[1], None)
         file_info['IMG_dpi'] = image.info.get('dpi', 'No data')
         file_info['IMG_device'] = exifdata.get(271, "No data")  # это модель устройства, с которого снимали
     
@@ -210,8 +210,6 @@ class PDFDocResearcher(GeneralResearcher):
         file_info['PDF_layout'] = reader.page_layout
 
         meta = reader.metadata
-        file_info['created_time'] = datetime.ctime(meta.creation_date)
-        file_info['Office_last_mod_time'] = datetime.ctime(meta.modification_date)
         file_info['Office_last_mod_by'] = meta.author
 
         return file_info
